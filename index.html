@@ -20,7 +20,7 @@
 
   <header>
     <h1>Resume, But Online<sup><a href="#fn1" id="ref1" style="text-decoration:none;font-size:75%">1</a></sup></h1>
-    <p class="author"> Oliver Bryniarski <br> Cal '22</p>
+    <p class="author"> Oliver Bryniarski <br>Cal '22</p>
   </header>
 
   <div class="abstract">
@@ -35,20 +35,49 @@
   </div>
 
   <figure>
-    <img src="me.jpg" width=90% height=90%>
+    <img src="images/me.jpg" width=90% height=90%>
     <figcaption>Figure 1: Me</figcaption>
   </figure>
 
 
   <div>
     <h2>Projects</h2>
+
+    <h3>Sketch Completion Using Robust Classifiers</h3>
+    <p>
+      Trained multiple adversarially robust convolutional neural networks. These models were then
+        used for both image generation and sketch completion, achieving near SOTA results (inspired by
+        <a href=https://arxiv.org/abs/1906.09453>Image Synthesis with a Single (Robust) Classifer, Santurkar et al.</a>).
+        Created website demo - <a href="https://bit.ly/2Zox4bs">https://bit.ly/2Zox4bs</a>.
+    </p>
+    <figure>
+      <img src="images/sketch_completion.png" width=40% height=40% style="margin-top:0.5cm">
+      <figcaption>Figure 2: Automobile Sketch Completion</figcaption>
+    </figure>
+
+    <h3>Random 2D World Generation</h3>
+    <p>
+      Created an object-oriented dungeon crawler game involving random world generation, taking
+      advantage of several data structures, such as weighted unions to assure each room was
+      accessible. Also implemented realistic AI to chase the player around while fullling goals
+      (Dijkstra's and A* algorithm).
+    </p>
+    <figure>
+      <img src="images/world_gen.png" width=60% height=60% style="margin-top:0.5cm">
+      <figcaption style="margin-bottom:0.5cm">Figure 3: Random World</figcaption>
+    </figure>
+
+
   </div>
+
+
+
+
 
   <div class="footnotes">
     <p id="fn1">1. <a href="OliverBryniarskiResume.pdf">resume, but pdf</a>
     <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a>
     </p>
-
   </div>
 
 </body>
