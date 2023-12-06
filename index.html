@@ -2,78 +2,292 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oliver Bryniarski</title>
-  <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
-  <style>
-    figcaption {text-align: center;}
-    img {display: block;
-         margin-left: auto;
-         margin-right: auto;}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Bryniarski</title>
+    <link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+    <style>
+        figcaption {text-align: center;}
+        img {display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.1cm;
+            margin-top: 0.1cm;}
+        .float_ambi {float: right;
+            margin-top: -5px;
+            margin-bottom: -15px;
+            margin-right: -10px;
+        }
+        .float_amazon {float: right;
+            margin-top: -10px;
+            margin-bottom: -130px;
+            margin-right: -200px;
+        }
 
-    a, a:link, a:visited {color: black;}
-  </style>
+        video {display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.1cm;
+            margin-top: 1cm;
+        }
+
+        p.bottom {
+            margin-bottom: 0.5cm;
+        }
+
+        .left, .right {
+            width: 49.5%;
+            display: inline-block;
+        }
+
+        button {
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            background: 0 0;
+            border: 0;
+            display: block;
+            margin: auto;
+        }   
+
+        h2.small-margin {
+            display: inline-block;
+            margin-top: 40px;
+            margin-bottom: 0px;
+        }
+        h4.small-margin {
+            display: inline-block;
+            margin-top: 30x;
+            margin-bottom: 0px;
+        }
+        h5.small-margin {
+            display: inline-block;
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+        p.small-margin {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        a.small-margin {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+    </style>
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem('dark') === 'true') {
+            document.body.classList.toggle('latex-dark');
+        }
+    </script>
 
-  <header>
-    <h1>Resume, But Online<sup><a href="#fn1" id="ref1" style="text-decoration:none;font-size:75%">1</a></sup></h1>
-    <p class="author"> Oliver Bryniarski <br>Cal '22</p>
-  </header>
+    <header>
+        <h1>Resume, But Online<sup><a href="#fn1" id="ref1" style="text-decoration:none;font-size:75%">1</a></sup></h1>
+        <button id="dark-mode-toggle">
+            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width=24 height=24 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" display="block">
+                <path d="M10 2A9 9 0 1 0 22 12 1 1 0 1 1 10 2z"/>
+            </svg>
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" width=24 height=24 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" display="none">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </button>
+        <p class="author"> Oliver Bryniarski <br>UC Berkeley '21</p>
+    </header>
 
-  <div class="abstract">
-    <h5>Abstract</h5>
-    <p>
-    My name is Oliver Bryniarski, and I am a rising junior studying Computer
-    Science and Mathematics at UC Berkeley. Check out my
-    <a href=https://github.com/obryniarski>GitHub</a>,
-    <a href=https://www.linkedin.com/in/oliver-bryniarski/>LinkedIn</a>,
-    and <a href=https://twitter.com/OBryniarski>Twitter</a>.
-  </p>
-  </div>
+    <main>
+        <div class="abstract">
+            <h5>Abstract</h5>
+            <p>
+            My name is Oliver Bryniarski, and I studied Computer Science and Mathematics at UC Berkeley. 
+            I'm passionate about machine learning, math, and research. I worked on machine learning 
+            research for a few years (unsupervised learning, adversarial attacks) and am currently working 
+            at Ambi Robotics improving a computer vision based robotic picking system.
+            Check out my
+            <a href=https://www.linkedin.com/in/oliver-bryniarski/>LinkedIn</a> and
+            <a href=https://github.com/obryniarski>Github</a>,
+            </p>
+        </div>
 
-  <figure>
-    <img src="images/me.jpg" width=90% height=90%>
-    <figcaption>Figure 1: Me</figcaption>
-  </figure>
+        <figure id="fig1" class="left">
+            <img src="images/me.jpg" width=100% height=100%>
+            <figcaption>Figure 1: Me</figcaption>
+        </figure>
+
+        <figure id="fig2" class="right">
+            <video width="100%" height="100%" autoplay muted loop>
+                <source src="images/ambi.mp4" type="video/mp4">
+                Your browser does not support the video.
+            </video>
+            <figcaption>Figure 2: What I Do</figcaption>
+        </figure>
+
+        <div>
+            <h2>Contents</h2>
+            <ol>
+                <li>
+                    <a href="#Experience">Experience</a>
+                    <ol>
+                        <li>
+                            <a href="#ambi">Ambi Robotics</a>
+                        </li>
+                        <li>
+                            <a href="#amazon">Amazon</a>
+                        </li>
+                        <li>
+                            <a href="#bair">Berkeley Artificial Intelligence Research</a>
+                        </li>
+                        <li>
+                            <a href="#mlab">Machine Learning @ Berkeley</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#Publications">Publications</a>
+                    <ol>
+                        <li>
+                            <a href="#adv-ex">Evading Adversarial Example Detection Defenses with Orthogonal Projected Gradient Descent</a>
+                        </li>
+                    </ol>
+                </li>
+
+            </ol>
+        </div>
 
 
-  <div>
-    <h2>Projects</h2>
+        <div id="Experience">
+            <h2 class="small-margin">Experience</h2>
 
-    <h3>Sketch Completion Using Robust Classifiers</h3>
-    <p>
-      Trained multiple adversarially robust convolutional neural networks. These models were then
-        used for both image generation and sketch completion, achieving near SOTA results (inspired by
-        <a href=https://arxiv.org/abs/1906.09453>Image Synthesis with a Single (Robust) Classifer, Santurkar et al.</a>).
-        Created website demo - <a href="https://bit.ly/2Zox4bs">https://bit.ly/2Zox4bs</a>.
-    </p>
-    <figure>
-      <img src="images/sketch_completion.png" width=40% height=40% style="margin-top:0.5cm">
-      <figcaption>Figure 2: Automobile Sketch Completion</figcaption>
-    </figure>
+            <div id="ambi">
+                <a class="float_ambi" href="https://ambirobotics.com/">
+                    <img src="images/ambi_logo.png" width=40% height=40%>
+                </a>
 
-    <h3>Random 2D World Generation</h3>
-    <p>
-      Created an object-oriented dungeon crawler game involving random world generation, taking
-      advantage of several data structures, such as weighted unions to assure each room was
-      accessible. Also implemented realistic AI to chase the player around while fullling goals
-      (Dijkstra's and A* algorithm).
-    </p>
-    <figure>
-      <img src="images/world_gen.png" width=60% height=60% style="margin-top:0.5cm">
-      <figcaption style="margin-bottom:0.5cm">Figure 3: Random World</figcaption>
-    </figure>
+                <h4 class="small-margin">
+                    Computer Vision Engineer 
+                </h4>
+                <h5 class="small-margin">
+                    Ambi Robotics, January 2022 - Current
+                </h5>
+                <p>
+                Researching new solutions to computer vision problems (learning-based and classical) and implementing them efficiently. 
+                Greatly improved the pick success rate of our robotic sorting system. I also wrote a significant portion of the code for 
+                our machine learning infrastructure.
+                Implemented, optimized, and A/B tested models for Stereo Depth Estimation, OCR, Segmentation, and Classification. 
+                Used PyTorch, NumPy, huggingface, and TensorRT for inference. See <a href="#fig2">Figure 2</a> for a video of our system in action.
+                </p>
+            </div>
+
+            <div id="amazon">
+                <a class="float_amazon" href="https://www.amazon.science/">
+                    <img src="images/smile.png" width=40% height=40%>
+                </a>
+
+                <h4 class="small-margin">
+                    Software Development Engineer Intern
+                </h4>
+                <h5 class="small-margin">
+                    Amazon, May 2021 - August 2021
+                </h5>
+                <p>
+                Implemented variable aliasing in Amazon's buyer fraud detection data loading pipeline, fixing a huge pain point for applied scientists.
+                </p>
+            </div>
+
+            <div id="bair">
+                <h4 class="small-margin">
+                    Undergraduate Researcher
+                </h4>
+                <h5 class="small-margin">
+                    Berkeley Artificial Intelligence Research, June 2020 - December 2021
+                </h5>
+                <p>
+                Worked under David Chan and John Canny on cluster based contrastive learning without a fixed number of clusters. Implemented numerous
+                clustering algorithms and contrastive learning techniques in PyTorch.
+
+            </div>
+
+            <div id="mlab">
+                <h4 class="small-margin">
+                    Undergraduate Researcher
+                </h4>
+                <h5 class="small-margin">
+                    Machine Learning @ Berkeley, October 2020 - December 2021
+                </h5>
+                <p>
+                Worked with Nicholas Carlini to break adversarial example defenses. Implemented multiple SOTA adversarial attack defenses in PyTorch and
+                broke them with our new attack technique, Orthogonal Projected Gradient Descent. Published the <a href="#adv-ex">results</a> in ICLR 2022.
+
+        </div>
 
 
-  </div>
+        <div id="Publications">
+            <h2 class="small-margin">Publications</h2>
 
-  <div class="footnotes">
-    <p id="fn1">1. <a href="OliverBryniarskiResume.pdf">resume, but pdf</a>
-    <a href="#ref1" title="back to footnote 1">↩</a>
-    </p>
-  </div>
+            <div id="adv-ex">
+                <h4 class="small-margin">Evading Adversarial Example Detection Defenses with Orthogonal Projected Gradient Descent</h4>
+                <p class="small-margin">Oliver Bryniarski, Nabeel Hingun, Pedro Pachuca, Vincent Wang, Nicholas Carlini</p>
+                <p class="small-margin"><a href="https://arxiv.org/abs/2106.15023">arXiv</a> / <a href="https://github.com/v-wangg/OrthogonalPGD">code</a></p>
+
+                <p class="bottom"> Evading adversarial example detection defenses requires finding adversarial examples that must 
+                simultaneously (a) be misclassified by the model and (b) be detected as non-adversarial. We introduce 
+                Orthogonal Projected Gradient Descent, an improved attack technique to generate adversarial examples that 
+                avoids this problem by orthogonalizing the gradients when running standard gradient-based attacks. We break
+                four published attacks and show that our technique is effective against a variety of defenses.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="footnotes">
+            <p id="fn1">1. <a href="OliverBryniarskiResume.pdf">resume, but pdf</a>
+            <a href="#ref1" title="back to footnote 1">↩</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        const darkModeToggle = document.querySelector('#dark-mode-toggle');  
+        const moonIcon = document.getElementById('moon');
+        const sunIcon = document.getElementById('sun');
+
+        const isDarkMode = () => {
+            return document.body.classList.contains('latex-dark');
+        };
+
+        if (isDarkMode()) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+            localStorage.setItem('dark', true);
+        } else {
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
+            localStorage.setItem('dark', false);
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('latex-dark');
+            if (isDarkMode()) {
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+                localStorage.setItem('dark', true);
+            } else {
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+                localStorage.setItem('dark', false);
+            }
+        });
+
+    </script>
 
 </body>
